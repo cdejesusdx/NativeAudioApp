@@ -1,0 +1,7 @@
+{
+  "name": "NativeAudioApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
