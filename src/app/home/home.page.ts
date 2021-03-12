@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private nativeAudio: NativeAudio) { 
+    this.nativeAudio.preloadSimple('audioId', 'assets/audio/file.mp3');
+  }
 
+  // Reproducir Audio
+  playAudio(){
+    this.nativeAudio.play('audioId');
+  }
+
+  // Detener Audio
+  stopAudio(){
+    this.nativeAudio.stop('audioId');
+  }
 }
